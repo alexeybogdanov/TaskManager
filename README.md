@@ -31,7 +31,7 @@ add() method, killing and removing from the TM list
 the oldest one (First-In, First-Out) when the max size
 is reached
 
-## PRIORITY BASED
+## Priority Based
 A new customer is asking something different again,
 every call to the add() method, when the max size is
 reached, should result into an evaluation: if the new
