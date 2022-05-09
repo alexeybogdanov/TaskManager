@@ -14,24 +14,24 @@ The process is immutable, it is generated with a
 priority and will die with this priority – each process
 has a kill() method that will destroy it
 
--Add a process
--List running processes
--Kill/KillGroup/KillAll
+* Add a process
+* List running processes
+* Kill/KillGroup/KillAll
 
-##Base approach
+## Base approach
 The default behaviour is that we can
 accept new processes till when there is capacity
 inside the Task Manager, otherwise we won’t accept
 any new process
 
-##FIFO
+## FIFO
 A different customer wants a different behaviour:
 he’s asking to accept all new processes through the
 add() method, killing and removing from the TM list
 the oldest one (First-In, First-Out) when the max size
 is reached
 
-##PRIORITY BASED
+## PRIORITY BASED
 A new customer is asking something different again,
 every call to the add() method, when the max size is
 reached, should result into an evaluation: if the new
@@ -39,13 +39,14 @@ process passed in the add() call has a higher priority
 compared to any of the existing one, we remove the
 lowest priority that is the oldest, otherwise we skip it
 
-###The task manager offers the possibility to list() all the
+### List running processes
+The task manager offers the possibility to list() all the
 running processes, sorting them by time of creation
 (implicitly we can consider it the time in which has
 been added to the TM), priority or id.
 
 ### Model one or more methods capable of
 
-1. killing a specific process
-2. killing all processes with a specific priority
-3. killing all running processes
+* killing a specific process
+* killing all processes with a specific priority
+* killing all running processes
